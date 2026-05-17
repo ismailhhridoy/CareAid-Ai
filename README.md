@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # ShasthyoAI — স্বাস্থ্য সহায়ক
 
 > AI-powered Bangla health companion for rural Bangladesh
