@@ -5,17 +5,17 @@ import { useState, useEffect } from "react";
 
 const SLIDES = [
   {
-    image: "/src/assets/images/hero_healthcare_worker_1778968826302.png",
+    image: "/images/hero_healthcare_worker_1778968826302.png",
     titleKey: "home.hero.title",
     subtitleKey: "home.hero.subtitle"
   },
   {
-    image: "/src/assets/images/hero_prescription_scan_1778968842233.png",
+    image: "/images/hero_prescription_scan_1778968842233.png",
     titleKey: "home.service.scan.title",
     subtitleKey: "home.service.scan.sub"
   },
   {
-    image: "/src/assets/images/hero_clinic_interior_1778968860846.png",
+    image: "/images/hero_clinic_interior_1778968860846.png",
     titleKey: "home.service.doctors.title",
     subtitleKey: "home.service.doctors.sub"
   }
