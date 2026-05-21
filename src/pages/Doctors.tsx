@@ -6,6 +6,7 @@ import { useLanguage } from "../lib/LanguageContext.tsx";
 import { User } from "firebase/auth";
 import { useStore, KEYS } from "../lib/store.ts";
 import type { LegibilityRecord } from "../lib/types.ts";
+import { usePatientProfile } from "../lib/profile.ts";
 
 const DOCTORS = [
   { name: "Dr. Anisur Rahman", hospital: "Dhaka Medical College Hospital", bmdc: "A-54321", rating: 4.8, reviews: 156, verified: true, specialty: "General Medicine", phone: "+880-2-55165088", district: "Dhaka", scores: { explained: 4.9, respectful: 4.8, legible: 4.7, tests: 4.8 } },
@@ -14,9 +15,36 @@ const DOCTORS = [
   { name: "Dr. Selina Akhter", hospital: "Chittagong Medical College", bmdc: "A-67890", rating: 4.9, reviews: 210, verified: true, specialty: "Internal Medicine", phone: "+880-31-619995", district: "Chittagong", scores: { explained: 5.0, respectful: 4.9, legible: 4.8, tests: 4.9 } },
   { name: "Dr. Jahangir Alam", hospital: "Sylhet MAG Osmani Medical", bmdc: "A-23456", rating: 4.3, reviews: 67, verified: true, specialty: "Cardiology", phone: "+880-821-714900", district: "Sylhet", scores: { explained: 4.2, respectful: 4.5, legible: 4.1, tests: 4.4 } },
   { name: "Dr. Nasrin Sultana", hospital: "Khulna Medical College", bmdc: "A-34567", rating: 4.6, reviews: 123, verified: true, specialty: "Dermatology", phone: "+880-41-731040", district: "Khulna", scores: { explained: 4.7, respectful: 4.8, legible: 4.4, tests: 4.5 } },
+  { name: "Dr. Mahbub Hasan", hospital: "Barisal Sher-e-Bangla Medical College", bmdc: "A-44521", rating: 4.4, reviews: 92, verified: true, specialty: "Pediatrics", phone: "+880-431-2173546", district: "Barisal", scores: { explained: 4.5, respectful: 4.6, legible: 3.4, tests: 4.4 } },
+  { name: "Dr. Roksana Khanam", hospital: "Mymensingh Medical College", bmdc: "A-58219", rating: 4.7, reviews: 178, verified: true, specialty: "Gynecology & Obstetrics", phone: "+880-91-66063", district: "Mymensingh", scores: { explained: 4.7, respectful: 4.8, legible: 4.5, tests: 4.6 } },
+  { name: "Dr. Tariq Aziz", hospital: "Rangpur Medical College", bmdc: "A-61932", rating: 4.0, reviews: 53, verified: true, specialty: "Internal Medicine", phone: "+880-521-66205", district: "Rangpur", scores: { explained: 3.9, respectful: 4.2, legible: 3.5, tests: 4.0 } },
+  { name: "Dr. Sumi Akter", hospital: "Cumilla Medical College", bmdc: "A-70214", rating: 4.5, reviews: 71, verified: true, specialty: "Dermatology", phone: "+880-81-76061", district: "Cumilla", scores: { explained: 4.6, respectful: 4.7, legible: 4.3, tests: 4.4 } },
+  { name: "Dr. Imran Hossain", hospital: "Jashore Medical College", bmdc: "A-78435", rating: 4.2, reviews: 64, verified: true, specialty: "General Medicine", phone: "+880-421-66666", district: "Jashore", scores: { explained: 4.2, respectful: 4.3, legible: 4.0, tests: 4.1 } },
+  { name: "Dr. Nahid Rezwana", hospital: "Dinajpur Medical College", bmdc: "A-82155", rating: 4.6, reviews: 108, verified: true, specialty: "Cardiology", phone: "+880-531-65111", district: "Dinajpur", scores: { explained: 4.7, respectful: 4.7, legible: 4.6, tests: 4.5 } },
+  { name: "Dr. Faruque Hossain", hospital: "Faridpur Medical College", bmdc: "A-65318", rating: 3.8, reviews: 47, verified: true, specialty: "Pediatrics", phone: "+880-631-63133", district: "Faridpur", scores: { explained: 3.8, respectful: 4.0, legible: 3.0, tests: 3.9 } },
+  { name: "Dr. Sabina Yasmin", hospital: "Noakhali Medical College", bmdc: "A-91402", rating: 4.4, reviews: 86, verified: true, specialty: "Gynecology & Obstetrics", phone: "+880-321-71500", district: "Noakhali", scores: { explained: 4.5, respectful: 4.5, legible: 4.2, tests: 4.3 } },
 ];
 
-const FILTERS = ["all", "nearby", "top", "needs_training", "gynecology", "pediatrics", "cardiology"];
+const FILTERS = ["all", "nearby", "top", "needs_training", "gynecology", "pediatrics", "cardiology", "dermatology"];
+
+// District centres (subset of the hospitals helper) for "nearest" sort without geolocation.
+const DISTRICT_CENTRES: Record<string, [number, number]> = {
+  Dhaka: [23.8103, 90.4125], Chittagong: [22.3569, 91.7832], Sylhet: [24.8949, 91.8687],
+  Rajshahi: [24.3636, 88.6241], Khulna: [22.8456, 89.5403], Barisal: [22.7010, 90.3535],
+  Mymensingh: [24.7471, 90.4203], Rangpur: [25.7439, 89.2752], Cumilla: [23.4607, 91.1809],
+  Noakhali: [22.8324, 91.0976], Jashore: [23.1664, 89.2086], Dinajpur: [25.6217, 88.6354],
+  Faridpur: [23.6070, 89.8429],
+};
+
+function distanceKm(a: [number, number], b: [number, number]): number {
+  const R = 6371;
+  const dLat = ((b[0] - a[0]) * Math.PI) / 180;
+  const dLng = ((b[1] - a[1]) * Math.PI) / 180;
+  const x =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((a[0] * Math.PI) / 180) * Math.cos((b[0] * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.min(1, Math.sqrt(x)));
+}
 
 export function DoctorsPage({ onLoginRequired, user }: { onLoginRequired: () => void; user: User | null }) {
   const { t, lang } = useLanguage();
@@ -26,6 +54,15 @@ export function DoctorsPage({ onLoginRequired, user }: { onLoginRequired: () => 
   const legibility = useStore<LegibilityRecord[]>(KEYS.LEGIBILITY_KEY, []);
   const legibilityByBmdc = new Map(legibility.map((r) => [r.bmdc, r] as const));
   const lookupLegibility = (bmdc: string) => legibilityByBmdc.get(bmdc);
+  const profile = usePatientProfile();
+  const userCentre: [number, number] | null =
+    profile.district && DISTRICT_CENTRES[profile.district] ? DISTRICT_CENTRES[profile.district] : null;
+  const distanceFor = (doc: { district: string }) => {
+    if (!userCentre) return Infinity;
+    const target = DISTRICT_CENTRES[doc.district];
+    if (!target) return Infinity;
+    return distanceKm(userCentre, target);
+  };
 
   const filtered = DOCTORS.filter(d => {
     const matchSearch = d.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -33,7 +70,8 @@ export function DoctorsPage({ onLoginRequired, user }: { onLoginRequired: () => 
       d.bmdc.toLowerCase().includes(search.toLowerCase()) ||
       d.specialty.toLowerCase().includes(search.toLowerCase()) ||
       d.district.toLowerCase().includes(search.toLowerCase());
-    if (filter === "all" || filter === "nearby") return matchSearch;
+    if (filter === "all") return matchSearch;
+    if (filter === "nearby") return matchSearch;
     if (filter === "top") return matchSearch && d.rating >= 4.5;
     if (filter === "needs_training") {
       const leg = lookupLegibility(d.bmdc);
@@ -47,6 +85,7 @@ export function DoctorsPage({ onLoginRequired, user }: { onLoginRequired: () => 
       const lb = lookupLegibility(b.bmdc)?.avgScore ?? 99;
       return la - lb;
     }
+    if (filter === "nearby") return distanceFor(a) - distanceFor(b);
     return 0;
   });
 
@@ -58,6 +97,7 @@ export function DoctorsPage({ onLoginRequired, user }: { onLoginRequired: () => 
     gynecology: { en: "Gynecology", bn: "গাইনি" },
     pediatrics: { en: "Pediatrics", bn: "শিশু বিশেষজ্ঞ" },
     cardiology: { en: "Cardiology", bn: "হৃদরোগ" },
+    dermatology: { en: "Dermatology", bn: "ত্বক বিশেষজ্ঞ" },
   };
 
   return (

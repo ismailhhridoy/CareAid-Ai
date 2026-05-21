@@ -91,6 +91,90 @@ export interface ExtractedPrescription {
   provider: "gemini" | "groq";                 // which model produced this
 }
 
+// ── Patient profile (used by the diagnostic engine) ────────────────────────
+export type ChronicCondition =
+  | "diabetes"
+  | "hypertension"
+  | "heart_disease"
+  | "asthma"
+  | "kidney_disease"
+  | "pregnancy"
+  | "tb_history"
+  | "immunocompromised";
+
+export interface PatientProfile {
+  age?: number;
+  sex?: "male" | "female" | "other";
+  district?: string;
+  conditions: ChronicCondition[];
+  allergies?: string[];
+  pregnancyWeeks?: number;
+  updatedAt: string;
+}
+
+// ── Hospitals + regional disease (used by the nearest-hospital + risk uplift) ─
+export interface Hospital {
+  id: string;
+  name_en: string;
+  name_bn: string;
+  district: string;
+  division: string;
+  type: "general" | "specialty" | "private" | "community";
+  lat: number;
+  lng: number;
+  phone?: string;
+  emergency: boolean;
+  obstetric?: boolean;
+  cardiac?: boolean;
+  stroke_unit?: boolean;
+}
+
+export interface DistrictTrend {
+  district: string;
+  disease: string;
+  diseaseTags: string[];   // KB tag aliases (e.g. "dengue", "ডেঙ্গু")
+  trendPercent: number;    // weekly change, +ve means rising
+  cases: number;
+}
+
+export interface RegionalDiseaseSnapshot {
+  updatedAt: string;
+  source: string;
+  trends: DistrictTrend[];
+}
+
+// ── Diagnostic engine output ────────────────────────────────────────────────
+export type RiskLevel = "low" | "medium" | "high";
+
+export interface DiagnosticFactor {
+  label_en: string;
+  label_bn: string;
+  value_en: string;
+  value_bn: string;
+  kind: "symptom" | "profile" | "regional" | "guideline";
+}
+
+export interface NearestHospital {
+  hospital: Hospital;
+  distanceKm: number;
+  source: "geolocation" | "district" | "fallback";
+}
+
+export interface DiagnosticResult {
+  riskScore: number;          // 0-100
+  riskLevel: RiskLevel;
+  severity: "mild" | "urgent" | "critical";
+  reason_en: string;          // one-paragraph "why this risk"
+  reason_bn: string;
+  warning_en?: string;        // time-sensitive flag e.g. "platelet drop in 24h"
+  warning_bn?: string;
+  factors: DiagnosticFactor[];
+  cta_en: string;             // "Go to hospital today"
+  cta_bn: string;
+  matchedKbIds: string[];
+  nearestHospitals: NearestHospital[];
+}
+
 // Per-doctor aggregated AI legibility from scans, keyed by BMDC number.
 export interface LegibilityRecord {
   bmdc: string;

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Mic, Send, Info, Loader2, MicOff, WifiOff, Cpu, Cloud, BookOpen } from "lucide-react";
+import { Mic, Send, Info, Loader2, MicOff, WifiOff, Cpu, Cloud, BookOpen, UserRound } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Markdown from "react-markdown";
 import { cn } from "@/src/lib/utils";
@@ -8,8 +8,11 @@ import { User } from "firebase/auth";
 import { useLocalLLM } from "../lib/llm.ts";
 import { useTfEngine } from "../lib/transformersEngine.ts";
 import { chat as routerChat, type ChatSource } from "../lib/tierRouter.ts";
+import { DiagnosticPanel } from "../components/DiagnosticPanel.tsx";
+import { PatientProfileSheet } from "../components/PatientProfileSheet.tsx";
+import { usePatientProfile, summariseProfile } from "../lib/profile.ts";
 
-interface Message { role: "user" | "assistant"; content: string; safety?: { verdict: string; matched: string[]; scrubbedLines?: number }; source?: ChatSource; }
+interface Message { role: "user" | "assistant"; content: string; safety?: { verdict: string; matched: string[]; scrubbedLines?: number }; source?: ChatSource; diagnosticForSymptoms?: string; }
 interface OfflineRule { keywords: string[]; verdict: string; en: string; bn: string; }
 
 export function TriagePage({ onLoginRequired, user }: { onLoginRequired: () => void; user: User | null }) {
@@ -26,6 +29,8 @@ export function TriagePage({ onLoginRequired, user }: { onLoginRequired: () => v
   const recognitionRef = useRef<any>(null);
   const llm = useLocalLLM();
   const tf = useTfEngine();
+  const profile = usePatientProfile();
+  const [showProfile, setShowProfile] = useState(false);
 
   // Monitor online status
   useEffect(() => {
@@ -65,10 +70,12 @@ export function TriagePage({ onLoginRequired, user }: { onLoginRequired: () => v
     setIsLoading(true);
 
     // Insert an empty assistant placeholder so streaming tokens can fill in live.
+    // Stamp the same user message onto the assistant turn so the diagnostic panel
+    // (which mounts under the bubble) can run its multi-factor analysis in parallel.
     let placeholderIndex = -1;
     setMessages(prev => {
       placeholderIndex = prev.length;
-      return [...prev, { role: "assistant", content: "" }];
+      return [...prev, { role: "assistant", content: "", diagnosticForSymptoms: userMessage }];
     });
 
     try {
@@ -165,6 +172,11 @@ export function TriagePage({ onLoginRequired, user }: { onLoginRequired: () => v
 
   return (
     <div className="flex flex-col h-full lg:max-w-3xl lg:mx-auto lg:w-full lg:my-6 lg:rounded-3xl lg:overflow-hidden lg:shadow-xl lg:border lg:border-gray-100 lg:bg-white lg:min-h-[80vh]">
+      {/* Profile sheet */}
+      <AnimatePresence>
+        {showProfile && <PatientProfileSheet onClose={() => setShowProfile(false)} />}
+      </AnimatePresence>
+
       {/* Offline banner */}
       <AnimatePresence>
         {isOffline && (
@@ -182,22 +194,46 @@ export function TriagePage({ onLoginRequired, user }: { onLoginRequired: () => v
         <p className="text-[10px] text-amber-800 leading-tight"><strong>{t("triage.disclaimer")}</strong></p>
       </div>
 
+      {/* Profile bar — drives the diagnostic engine */}
+      <button
+        onClick={() => setShowProfile(true)}
+        className="flex items-center gap-2 px-4 py-2 bg-white border-b border-gray-100 text-left hover:bg-gray-50 transition-colors"
+      >
+        <div className="w-7 h-7 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 shrink-0">
+          <UserRound size={14} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{t("triage.profile.label")}</p>
+          <p className="text-xs font-medium text-gray-800 truncate">{summariseProfile(profile, lang as "en" | "bn")}</p>
+        </div>
+        <span className="text-[10px] font-bold text-emerald-600">{t("triage.profile.edit")}</span>
+      </button>
+
       {/* Messages */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4">
         <AnimatePresence initial={false}>
           {messages.map((msg, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-              className={cn("flex flex-col gap-1", msg.role === "user" ? "items-end" : "items-start")}>
+              className={cn("flex flex-col gap-2", msg.role === "user" ? "items-end" : "items-start")}>
               <div className={cn(
                 "max-w-[88%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm prose prose-sm",
                 msg.role === "user"
                   ? "bg-emerald-600 text-white rounded-tr-none prose-invert"
                   : "bg-white text-gray-800 rounded-tl-none border border-gray-100"
               )}>
-                <Markdown>{msg.content}</Markdown>
+                <Markdown>{msg.content || (msg.role === "assistant" ? "…" : "")}</Markdown>
               </div>
               {msg.role === "assistant" && msg.source && i > 0 && (
                 <SourcePill source={msg.source} t={t} />
+              )}
+              {/* Multi-factor diagnostic panel — runs alongside the chat reply. */}
+              {msg.role === "assistant" && msg.diagnosticForSymptoms && (
+                <div className="w-full lg:max-w-[480px] mt-1">
+                  <DiagnosticPanel
+                    symptoms={msg.diagnosticForSymptoms}
+                    onSetProfile={() => setShowProfile(true)}
+                  />
+                </div>
               )}
             </motion.div>
           ))}

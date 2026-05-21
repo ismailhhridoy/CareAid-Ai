@@ -472,6 +472,206 @@
       "summary": { "en": "Persistent sadness, loss of interest, sleep changes, low energy, poor appetite for >2 weeks may be depression — a treatable medical condition.", "bn": "২ সপ্তাহের বেশি ক্রমাগত মন খারাপ, আগ্রহ হারিয়ে যাওয়া, ঘুমের পরিবর্তন, কম শক্তি, ক্ষুধামন্দা — বিষণ্ণতা হতে পারে, যা চিকিৎসাযোগ্য।" },
       "advice": { "en": "Talk to one trusted person. Try to walk 20 minutes outside daily. Keep a regular sleep time. Limit alcohol and tobacco. Counselling and (in some cases) medication help — both are available at upazila health complexes.", "bn": "একজন বিশ্বস্ত মানুষের সাথে কথা বলুন। প্রতিদিন ২০ মিনিট বাইরে হাঁটার চেষ্টা করুন। নিয়মিত ঘুম। মদ ও তামাক সীমিত। কাউন্সেলিং ও (কিছু ক্ষেত্রে) ওষুধ সাহায্য করে — উপজেলা স্বাস্থ্য কমপ্লেক্সে উপলব্ধ।" },
       "seeDoctor": { "en": "Talk to a doctor or call Kaan Pete Roi 9612119911. URGENT if any thought of suicide or self-harm.", "bn": "ডাক্তারের সাথে কথা বলুন বা কান পেতে রই ৯৬১২১১৯৯১১-এ কল করুন। আত্মহত্যার চিন্তা বা নিজেকে আঘাতের ইচ্ছা হলে — জরুরি।" }
+    },
+    {
+      "id": "dka-high-sugar",
+      "tags_en": ["high blood sugar", "DKA", "diabetic ketoacidosis", "fruity breath", "frequent urination"],
+      "tags_bn": ["সুগার বেশি", "ডায়াবেটিক কিটোএসিডোসিস", "ঘন ঘন প্রস্রাব"],
+      "severity": "critical",
+      "title": { "en": "Very high blood sugar (DKA)", "bn": "রক্তে চিনি অনেক বেশি (DKA)" },
+      "summary": { "en": "Diabetic with frequent urination, intense thirst, nausea/vomiting, deep rapid breathing, and a fruity/sweet smell on breath — a medical emergency called ketoacidosis.", "bn": "ডায়াবেটিক রোগীর ঘন ঘন প্রস্রাব, তীব্র পিপাসা, বমিভাব/বমি, গভীর দ্রুত শ্বাস ও মুখে মিষ্টি/ফলের গন্ধ — কিটোএসিডোসিস, চিকিৎসা জরুরি।" },
+      "advice": { "en": "Do not eat heavy food. Sip plain water in small amounts if conscious. Do NOT give insulin without doctor's instruction. Lie on side if drowsy.", "bn": "ভারী খাবার নয়। জ্ঞান থাকলে অল্প অল্প করে পানি পান করান। ডাক্তারের নির্দেশ ছাড়া ইনসুলিন দেবেন না। তন্দ্রাচ্ছন্ন হলে পাশ ফিরে শোয়ান।" },
+      "seeDoctor": { "en": "Call 999 or go to hospital NOW. DKA can be fatal within hours. Bring all diabetes medicines with you.", "bn": "এখনই ৯৯৯ অথবা হাসপাতাল। DKA কয়েক ঘণ্টায় মারাত্মক হতে পারে। সব ডায়াবেটিসের ওষুধ সাথে নিন।" }
+    },
+    {
+      "id": "newborn-jaundice",
+      "tags_en": ["newborn jaundice", "baby yellow", "neonatal jaundice"],
+      "tags_bn": ["নবজাতকের জন্ডিস", "শিশু হলুদ"],
+      "severity": "urgent",
+      "title": { "en": "Newborn jaundice (yellow baby)", "bn": "নবজাতকের জন্ডিস" },
+      "summary": { "en": "Yellow tint of skin/eyes appearing in the first week of life. Mild cases settle on their own; severe cases can damage the brain (kernicterus).", "bn": "জন্মের প্রথম সপ্তাহে শিশুর চামড়া/চোখ হলুদ হওয়া। সামান্য নিজেই সারে; তীব্র হলে মস্তিষ্কের ক্ষতি (কার্নিকটেরাস) হতে পারে।" },
+      "advice": { "en": "Continue breastfeeding frequently (8–12 times/day). Indirect daytime light helps. Do NOT put the baby in direct hot sun.", "bn": "ঘন ঘন বুকের দুধ খাওয়ান (দিনে ৮-১২ বার)। হালকা দিনের আলো সাহায্য করে। সরাসরি গরম রোদে রাখবেন না।" },
+      "seeDoctor": { "en": "Same day if: yellow extends below the navel, baby is sleepy/not feeding, high-pitched cry, arched body, or yellow appears in the first 24 hours. Hospital phototherapy is usually free at govt facilities.", "bn": "একই দিনে: নাভির নিচ পর্যন্ত হলুদ, শিশু ঘুমকাতুরে/খাচ্ছে না, কড়া চিৎকার, শরীর বেঁকে যাওয়া, বা ২৪ ঘণ্টার মধ্যে হলুদ। সরকারি হাসপাতালে ফটোথেরাপি সাধারণত বিনামূল্যে।" }
+    },
+    {
+      "id": "labor-signs",
+      "tags_en": ["labour", "labor pain", "contractions", "water broke", "delivery"],
+      "tags_bn": ["প্রসব বেদনা", "প্রসব", "পানি ভাঙা"],
+      "severity": "urgent",
+      "title": { "en": "Labour onset signs", "bn": "প্রসব শুরুর লক্ষণ" },
+      "summary": { "en": "Regular tightening pains every 5–10 minutes that get stronger, low-back ache, blood-tinged mucus discharge (\"show\"), or water breaking.", "bn": "৫-১০ মিনিট পরপর নিয়মিত শক্ত হয়ে আসা ব্যথা যা বাড়তে থাকে, কোমরে ব্যথা, রক্তমিশ্রিত শ্লেষ্মা স্রাব, বা পানি ভাঙা।" },
+      "advice": { "en": "Note time of first pain and how often pains come. Pack: antenatal card, ID, money, baby/mother clothes, sanitary cloth. Eat lightly. Do not bear down before reaching hospital.", "bn": "প্রথম ব্যথার সময় ও কত ঘন ঘন আসছে মনে রাখুন। সাথে নিন: অ্যান্টেনাটাল কার্ড, পরিচয়পত্র, টাকা, মা-শিশুর কাপড়, পরিষ্কার কাপড়। হালকা খান। হাসপাতালে পৌঁছানোর আগে কুঁথ দেবেন না।" },
+      "seeDoctor": { "en": "Go to maternity facility when pains are 5 min apart for first baby or 10 min apart for second+ baby, OR water breaks, OR bleeding. Call 999 for ambulance if far.", "bn": "প্রথম সন্তান হলে ৫ মিনিট, দ্বিতীয়+ হলে ১০ মিনিট পরপর ব্যথা, অথবা পানি ভাঙা, অথবা রক্তক্ষরণ হলে মাতৃসেবা কেন্দ্রে যান। দূরে হলে ৯৯৯-এ অ্যাম্বুলেন্স।" }
+    },
+    {
+      "id": "preeclampsia",
+      "tags_en": ["preeclampsia", "high BP pregnancy", "swelling face hands pregnant", "vision blur pregnant"],
+      "tags_bn": ["প্রি-এক্ল্যাম্পসিয়া", "গর্ভাবস্থায় উচ্চ রক্তচাপ", "গর্ভবতী মুখ হাত ফোলা"],
+      "severity": "critical",
+      "title": { "en": "Pre-eclampsia (high BP in pregnancy)", "bn": "প্রি-এক্ল্যাম্পসিয়া" },
+      "summary": { "en": "After 20 weeks of pregnancy: high BP ≥140/90 with severe headache, blurred vision/seeing spots, upper-abdomen pain, or sudden swelling of face/hands. Can progress to seizures (eclampsia) and is fatal if untreated.", "bn": "গর্ভধারণের ২০ সপ্তাহের পর: BP ১৪০/৯০-এর বেশি, তীব্র মাথাব্যথা, ঝাপসা দৃষ্টি/দাগ দেখা, উপরের পেটে ব্যথা, বা মুখ/হাত হঠাৎ ফোলা। চিকিৎসা না করলে খিঁচুনি (এক্ল্যাম্পসিয়া) ও মৃত্যু হতে পারে।" },
+      "advice": { "en": "Lie on left side. Reduce noise/light. Do NOT take painkillers — many are unsafe in pregnancy. Note BP if you have a meter.", "bn": "বাঁ দিক ফিরে শোয়ান। শব্দ/আলো কমান। ব্যথানাশক খাবেন না — অনেকটি গর্ভাবস্থায় অনিরাপদ। মিটার থাকলে BP মেপে রাখুন।" },
+      "seeDoctor": { "en": "Go to hospital with maternity unit NOW. Call 999 if no transport. Magnesium sulphate prevents seizures and is free at government hospitals.", "bn": "এখনই মাতৃসেবাযুক্ত হাসপাতালে। যানবাহন না থাকলে ৯৯৯। ম্যাগনেসিয়াম সালফেট খিঁচুনি ঠেকায়, সরকারি হাসপাতালে বিনামূল্যে।" }
+    },
+    {
+      "id": "worm-infestation",
+      "tags_en": ["worms", "intestinal worms", "deworming", "roundworm", "tapeworm"],
+      "tags_bn": ["কৃমি", "অন্ত্রের কৃমি", "কৃমিনাশক"],
+      "severity": "mild",
+      "title": { "en": "Intestinal worms (kreemi)", "bn": "অন্ত্রের কৃমি" },
+      "summary": { "en": "Itching around the anus (especially at night), abdominal pain, weight loss, or worms visible in stool. Very common in rural children due to unsafe water and bare feet.", "bn": "মলদ্বারের চারপাশে চুলকানি (বিশেষত রাতে), পেট ব্যথা, ওজন কমা, বা মলে কৃমি দেখা। অনিরাপদ পানি ও খালি পায়ে চলায় গ্রামের শিশুদের মধ্যে খুব সাধারণ।" },
+      "advice": { "en": "Boil drinking water. Wash hands with soap before food and after toilet. Cut and clean nails. Wear shoes outdoors. Government school deworming campaigns offer free albendazole every 6 months — take part.", "bn": "পানি ফুটিয়ে পান করুন। খাবার আগে ও টয়লেটের পরে সাবান দিয়ে হাত ধুয়ে নিন। নখ কাটুন। বাইরে জুতা পরুন। সরকারি স্কুল কৃমিনাশক কর্মসূচিতে ৬ মাস পরপর বিনামূল্যে অ্যালবেনডাজোল দেওয়া হয় — অংশ নিন।" },
+      "seeDoctor": { "en": "See doctor for confirmed dose if: severe abdominal pain, blood in stool, very poor weight gain in child, or wormy vomiting.", "bn": "ডাক্তার দেখান যদি: তীব্র পেট ব্যথা, মলে রক্ত, শিশুর ওজন একদম বাড়ছে না, বা বমিতে কৃমি।" }
+    },
+    {
+      "id": "hand-foot-mouth",
+      "tags_en": ["hand foot mouth", "HFMD", "mouth ulcers child"],
+      "tags_bn": ["হাত পা মুখ রোগ", "HFMD"],
+      "severity": "mild",
+      "title": { "en": "Hand, foot, and mouth disease (child)", "bn": "হাত-পা-মুখ রোগ (শিশু)" },
+      "summary": { "en": "Viral illness in young children: small painful blisters on hands, feet, inside mouth; mild fever. Settles in about a week. Very contagious to other kids.", "bn": "ছোট শিশুদের ভাইরাল রোগ: হাত, পা, মুখের ভিতরে ছোট ব্যথাযুক্ত ফোসকা; সামান্য জ্বর। প্রায় এক সপ্তাহে সারে। অন্য শিশুদের জন্য খুব ছোঁয়াচে।" },
+      "advice": { "en": "Cold soft foods (yoghurt, cooled rice). Plenty of fluids. Paracetamol syrup for pain — verify dose. Keep child away from school/daycare until fever and blisters resolve. Wash hands often.", "bn": "ঠান্ডা নরম খাবার (দই, ঠান্ডা ভাত)। প্রচুর তরল। ব্যথার জন্য প্যারাসিটামল সিরাপ — ডোজ যাচাই করুন। জ্বর ও ফোসকা না সারা পর্যন্ত স্কুল/ডে-কেয়ার বন্ধ। ঘন ঘন হাত ধোয়া।" },
+      "seeDoctor": { "en": "Go to doctor if: child can't drink, no urine for 8h, high fever >102°F not settling, very drowsy, or seizure. Newborns and immunocompromised need urgent review.", "bn": "ডাক্তার দেখান: শিশু পান করতে পারছে না, ৮ ঘণ্টা প্রস্রাব নেই, জ্বর ১০২°F-এর বেশি কমছে না, খুব ঘুম ঘুম, বা খিঁচুনি। নবজাতক ও কম রোগ প্রতিরোধী শিশুর জন্য জরুরি।" }
+    },
+    {
+      "id": "child-pneumonia",
+      "tags_en": ["pneumonia child", "fast breathing child", "chest indrawing"],
+      "tags_bn": ["শিশু নিউমোনিয়া", "শিশুর দ্রুত শ্বাস", "বুক ভিতরে টানা"],
+      "severity": "critical",
+      "title": { "en": "Pneumonia in a child (fast breathing)", "bn": "শিশুর নিউমোনিয়া (দ্রুত শ্বাস)" },
+      "summary": { "en": "Cough plus fast breathing — WHO IMCI cutoffs: ≥60/min for <2 months, ≥50/min for 2–12 months, ≥40/min for 1–5 years. Chest in-drawing (skin sucked in between ribs) is a danger sign.", "bn": "কাশির সাথে দ্রুত শ্বাস — WHO IMCI অনুযায়ী: ২ মাসের কম ≥৬০/মিনিট, ২-১২ মাস ≥৫০/মিনিট, ১-৫ বছর ≥৪০/মিনিট। পাঁজরের মাঝে ত্বক ভিতরে টানা — বিপদ সংকেত।" },
+      "advice": { "en": "Sit baby upright on someone's lap. Continue breastfeeding. Keep warm. Do NOT give random cough syrup or antibiotics on your own.", "bn": "শিশুকে কারো কোলে সোজা বসান। বুকের দুধ চালিয়ে যান। গরম রাখুন। নিজে যেকোনো কাশির সিরাপ বা অ্যান্টিবায়োটিক দেবেন না।" },
+      "seeDoctor": { "en": "Go to nearest health complex NOW. Antibiotics (govt-supplied amoxicillin in DGHS IMCI kits) save lives when given fast. Call 999 if far.", "bn": "এখনই নিকটতম স্বাস্থ্য কমপ্লেক্স। দ্রুত অ্যান্টিবায়োটিক (DGHS IMCI কিটে সরকারি অ্যামক্সিসিলিন) জীবন বাঁচায়। দূরে হলে ৯৯৯।" }
+    },
+    {
+      "id": "tetanus-signs",
+      "tags_en": ["tetanus", "lockjaw", "muscle spasm wound", "rusty nail"],
+      "tags_bn": ["ধনুষ্টংকার", "টিটানাস", "চোয়াল আটকে যাওয়া"],
+      "severity": "critical",
+      "title": { "en": "Suspected tetanus (lockjaw)", "bn": "সম্ভাব্য ধনুষ্টংকার" },
+      "summary": { "en": "Days/weeks after a dirty wound (rusty nail, soil contamination, animal bite, unclean delivery): difficulty opening the mouth, neck stiffness, painful body spasms with light/sound. Often fatal without anti-toxin.", "bn": "নোংরা ক্ষতের (মরিচা পেরেক, মাটি, প্রাণীর কামড়, অপরিচ্ছন্ন প্রসব) কয়েক দিন/সপ্তাহ পর: মুখ খুলতে সমস্যা, ঘাড় শক্ত, আলো/শব্দে শরীরে ব্যথাযুক্ত খিঁচুনি। অ্যান্টি-টক্সিন ছাড়া প্রায়ই মারাত্মক।" },
+      "advice": { "en": "Keep patient in a quiet, dim room. Do NOT touch them suddenly — touch and noise trigger spasms. Note any recent wound and its date.", "bn": "শান্ত, আবছা ঘরে রাখুন। হঠাৎ ছোঁবেন না — স্পর্শ ও শব্দে খিঁচুনি বাড়ে। সাম্প্রতিক কোনো ক্ষত ও তার তারিখ মনে রাখুন।" },
+      "seeDoctor": { "en": "Hospital NOW. Prevention is everything — make sure routine TT vaccine is updated; mothers get TT during pregnancy as part of EPI.", "bn": "এখনই হাসপাতাল। প্রতিরোধই মূল — নিয়মিত TT টিকা আপডেট রাখুন; EPI অনুযায়ী গর্ভাবস্থায় মাকে TT দেওয়া হয়।" }
+    },
+    {
+      "id": "vertigo",
+      "tags_en": ["vertigo", "dizzy", "room spinning", "BPPV"],
+      "tags_bn": ["মাথা ঘোরা", "ঘর ঘুরছে", "চক্কর"],
+      "severity": "mild",
+      "title": { "en": "Vertigo (room spinning)", "bn": "মাথা ঘোরা (ঘর ঘুরছে অনুভূত হওয়া)" },
+      "summary": { "en": "Sensation that the room is spinning, often triggered by head position changes. Common cause is BPPV (inner-ear crystals) — usually settles in weeks with simple manoeuvres.", "bn": "ঘর ঘুরছে এমন অনুভূতি, প্রায়ই মাথার অবস্থান বদলালে হয়। সাধারণ কারণ BPPV (ভিতরের কানের ক্রিস্টাল) — সরল ব্যায়ামে কয়েক সপ্তাহে সারে।" },
+      "advice": { "en": "Sit or lie down until the spinning passes — do not stand or drive. Move the head slowly. Stay hydrated. Avoid sudden head turns.", "bn": "ঘোরা না কমা পর্যন্ত বসে বা শুয়ে থাকুন — দাঁড়াবেন না বা গাড়ি চালাবেন না। মাথা ধীরে নাড়ান। পানি পান করুন। হঠাৎ মাথা ঘোরাবেন না।" },
+      "seeDoctor": { "en": "Hospital if: vertigo with one-sided weakness, slurred speech, double vision, severe headache, or hearing loss — could be a stroke.", "bn": "হাসপাতালে: ঘোরার সাথে এক পাশ দুর্বল, কথা জড়ানো, দ্বিগুণ দৃষ্টি, তীব্র মাথাব্যথা, বা শ্রবণ কমে যাওয়া — স্ট্রোক হতে পারে।" }
+    },
+    {
+      "id": "nosebleed",
+      "tags_en": ["nosebleed", "epistaxis"],
+      "tags_bn": ["নাক দিয়ে রক্ত পড়া", "নাকের রক্তপাত"],
+      "severity": "mild",
+      "title": { "en": "Nose bleed", "bn": "নাক দিয়ে রক্ত পড়া" },
+      "summary": { "en": "Most are from a small front-of-nose vessel and stop with pressure. Hot weather, dry air, nose picking, hard sneeze are common triggers.", "bn": "বেশিরভাগ নাকের সামনের ছোট নল থেকে — চাপে বন্ধ হয়। গরম আবহাওয়া, শুষ্ক বাতাস, নাক খোঁচানো, জোরে হাঁচি — সাধারণ কারণ।" },
+      "advice": { "en": "Sit up, lean slightly FORWARD (not back — blood going down throat causes vomiting). Pinch the soft part of the nose tight with thumb and finger for a full 10 minutes — don't peek. Cold pack on the bridge.", "bn": "সোজা বসুন, সামান্য সামনে ঝুঁকুন (পেছনে নয় — গলায় রক্ত গেলে বমি হয়)। নাকের নরম অংশ বুড়ো আঙুল ও তর্জনী দিয়ে শক্ত করে চেপে ১০ মিনিট ধরুন — দেখার জন্য ছাড়বেন না। নাকের ব্রিজে ঠান্ডা সেঁক।" },
+      "seeDoctor": { "en": "Hospital if: bleeding doesn't stop after 20 min of firm pressure, very heavy bleeding, after a head injury, you take blood-thinners, or repeated bleeds.", "bn": "হাসপাতালে: ২০ মিনিট চাপের পরও রক্ত বন্ধ হচ্ছে না, প্রচুর রক্তক্ষরণ, মাথায় আঘাতের পর, রক্ত পাতলা করার ওষুধ খান, বা বারবার রক্তপাত।" }
+    },
+    {
+      "id": "sprain-strain",
+      "tags_en": ["sprain", "strain", "twisted ankle", "muscle pull"],
+      "tags_bn": ["মচকানো", "মোচ", "পেশী টান"],
+      "severity": "mild",
+      "title": { "en": "Sprain or muscle strain", "bn": "মচকানো বা পেশী টান" },
+      "summary": { "en": "Twisted ankle, pulled back, swollen joint after a fall or sudden movement. No bone break but ligament/muscle stretched.", "bn": "পড়ে বা হঠাৎ নড়াচড়ায় গোড়ালি মচকানো, পিঠ টানা, জয়েন্ট ফোলা। হাড় ভাঙেনি কিন্তু লিগামেন্ট/পেশী টানা।" },
+      "advice": { "en": "RICE: Rest — don't put weight on it for 24–48h. Ice — cold pack wrapped in cloth, 15 min on / 1h off. Compress — elastic bandage, not too tight. Elevate — keep limb above heart level. Paracetamol for pain.", "bn": "RICE: Rest — ২৪-৪৮ ঘণ্টা ভার দেবেন না। Ice — কাপড়ে মোড়া বরফ, ১৫ মিনিট দিন / ১ ঘণ্টা বিরতি। Compress — ইলাস্টিক ব্যান্ডেজ, খুব আঁটসাঁট নয়। Elevate — হার্টের উপরে উঠিয়ে রাখুন। ব্যথার জন্য প্যারাসিটামল।" },
+      "seeDoctor": { "en": "Hospital if: can't bear any weight on the leg, severe swelling or deformity, bone visible, numbness/pale toes, or no improvement in 5 days. X-ray to rule out fracture.", "bn": "হাসপাতালে: পায়ে ভর দিতে পারছেন না, তীব্র ফোলা বা বিকৃতি, হাড় দেখা যাচ্ছে, অসাড় ভাব/ফ্যাকাশে আঙুল, বা ৫ দিনেও উন্নতি নেই। ফ্র্যাকচার বাদ দিতে এক্স-রে।" }
+    },
+    {
+      "id": "suspected-fracture",
+      "tags_en": ["fracture", "broken bone", "bone break"],
+      "tags_bn": ["হাড় ভাঙা", "ফ্র্যাকচার"],
+      "severity": "urgent",
+      "title": { "en": "Suspected broken bone", "bn": "হাড় ভাঙার সন্দেহ" },
+      "summary": { "en": "After a fall/accident: severe pain, deformity, can't move/bear weight, bone visible, or grinding sound on movement.", "bn": "পড়ে যাওয়া/দুর্ঘটনার পর: তীব্র ব্যথা, বিকৃতি, নড়াচড়া/ভর দিতে পারছেন না, হাড় দেখা যাচ্ছে, বা নড়ালে কড়কড় শব্দ।" },
+      "advice": { "en": "Do NOT try to straighten the limb. Immobilise with a splint (bamboo, magazine, plank) tied above and below the break with cloth — not too tight. Cover any open wound with clean cloth. Do not give food/water in case surgery is needed.", "bn": "অঙ্গ সোজা করার চেষ্টা করবেন না। ভাঙার উপরে ও নিচে কাপড় দিয়ে বেঁধে স্প্লিন্ট (বাঁশ, ম্যাগাজিন, তক্তা) দিয়ে আটকান — খুব আঁটসাঁট নয়। খোলা ক্ষত পরিষ্কার কাপড়ে ঢাকুন। অস্ত্রোপচার লাগতে পারে — খাবার/পানি দেবেন না।" },
+      "seeDoctor": { "en": "Hospital with X-ray and orthopaedic care. Call 999 if spine/neck/hip injury — do not move the patient yourself.", "bn": "এক্স-রে ও অর্থোপেডিক সেবাযুক্ত হাসপাতাল। মেরুদণ্ড/ঘাড়/কোমরে আঘাত হলে ৯৯৯ — নিজে রোগীকে নাড়াবেন না।" }
+    },
+    {
+      "id": "bee-sting",
+      "tags_en": ["bee sting", "wasp sting", "insect sting", "hornet"],
+      "tags_bn": ["মৌমাছির কামড়", "বোলতার কামড়", "পোকার হুল"],
+      "severity": "mild",
+      "title": { "en": "Bee, wasp or insect sting", "bn": "মৌমাছি, বোলতা বা পোকার হুল" },
+      "summary": { "en": "Local pain, swelling, redness, itching. Most settle in hours. Multiple stings or allergic reactions can be dangerous.", "bn": "স্থানীয় ব্যথা, ফোলা, লালভাব, চুলকানি। বেশিরভাগ কয়েক ঘণ্টায় সারে। অনেকগুলো হুল বা এলার্জি প্রতিক্রিয়া বিপজ্জনক হতে পারে।" },
+      "advice": { "en": "Remove a visible sting by scraping sideways with a card/nail edge — don't squeeze it. Wash with soap and water. Cold pack 15 min for swelling. Paracetamol or cetirizine for itch (verify with pharmacist).", "bn": "দৃশ্যমান হুল কার্ড/নখের কিনারা দিয়ে পাশ থেকে স্ক্র্যাপ করুন — চেপে ধরবেন না। সাবান-পানিতে ধুয়ে নিন। ফোলায় ১৫ মিনিট ঠান্ডা সেঁক। চুলকানিতে প্যারাসিটামল বা সেটিরিজিন (ফার্মাসিস্টের সাথে যাচাই)।" },
+      "seeDoctor": { "en": "Call 999 / hospital NOW if: lip/face/throat swelling, breathing trouble, dizziness or fainting, hives all over, OR many stings (e.g. hornet swarm). Sting inside the mouth/throat is urgent.", "bn": "এখনই ৯৯৯ / হাসপাতালে: ঠোঁট/মুখ/গলা ফোলা, শ্বাসকষ্ট, মাথা ঘোরা বা অজ্ঞান, সারা শরীরে চাকা, অথবা অনেকগুলো হুল (ভিমরুলের ঝাঁক)। মুখ/গলার ভেতরে হুল — জরুরি।" }
+    },
+    {
+      "id": "gastritis-acidity",
+      "tags_en": ["gastritis", "acidity", "stomach burn", "indigestion"],
+      "tags_bn": ["গ্যাস্ট্রিক", "অম্লতা", "অম্বল", "পেট জ্বালা"],
+      "severity": "mild",
+      "title": { "en": "Acidity / gastritis", "bn": "অম্লতা / গ্যাস্ট্রাইটিস" },
+      "summary": { "en": "Burning pain in upper abdomen, nausea, belching, worse after spicy/oily food or empty stomach. Usually self-limiting.", "bn": "উপরের পেটে জ্বালাপোড়া ব্যথা, বমিভাব, ঢেকুর; ঝাল/তৈলাক্ত খাবার বা খালি পেটে বাড়ে। সাধারণত নিজেই সারে।" },
+      "advice": { "en": "Eat small frequent meals — don't skip. Avoid: spicy food, deep-fried food, raw onion, betel leaf with tobacco, smoking, alcohol, very hot tea. Plain rice, banana, biscuits are gentle. OTC antacid (e.g. magnesium hydroxide gel) after food helps — verify with pharmacist; do NOT take prescription-strength stomach medicines without a doctor.", "bn": "অল্প অল্প করে ঘন ঘন খান — না খেয়ে থাকবেন না। এড়িয়ে চলুন: ঝাল, ডুবো তেলে ভাজা, কাঁচা পেঁয়াজ, পান-তামাক, ধূমপান, মদ, খুব গরম চা। ভাত, কলা, বিস্কুট সহায়ক। খাবারের পর OTC অ্যান্টাসিড (যেমন ম্যাগনেসিয়াম হাইড্রক্সাইড জেল) — ফার্মাসিস্টের সাথে যাচাই; ডাক্তার ছাড়া প্রেসক্রিপশন-স্ট্রেংথ পেটের ওষুধ নয়।" },
+      "seeDoctor": { "en": "Doctor if: pain lasts >2 weeks, black/tarry stool, vomiting blood, weight loss, swallowing difficulty, severe night pain, or pain spreading to back. Could be ulcer, H. pylori, or cancer.", "bn": "ডাক্তার দেখান: ২ সপ্তাহের বেশি স্থায়ী, কালো মল, রক্ত বমি, ওজন কমে যাওয়া, গিলতে কষ্ট, রাতে তীব্র ব্যথা, বা পিঠে ছড়ানো। আলসার, H. pylori বা ক্যান্সার হতে পারে।" }
+    },
+    {
+      "id": "gerd-acid-reflux",
+      "tags_en": ["GERD", "acid reflux", "heartburn", "sour belch"],
+      "tags_bn": ["অ্যাসিড রিফ্লাক্স", "বুক জ্বালা", "টক ঢেকুর"],
+      "severity": "mild",
+      "title": { "en": "Acid reflux (GERD)", "bn": "অ্যাসিড রিফ্লাক্স" },
+      "summary": { "en": "Burning behind the breastbone, sour or bitter taste in mouth, worse when lying down or after large meals. Different from gastritis — reflux is when stomach acid comes UP into the food pipe.", "bn": "বুকের হাড়ের পেছনে জ্বালা, মুখে টক বা তেতো স্বাদ; শুয়ে পড়লে বা ভারী খাওয়ার পর বাড়ে। গ্যাস্ট্রাইটিস থেকে ভিন্ন — রিফ্লাক্স মানে পেটের অ্যাসিড উপরে খাদ্যনালীতে উঠে আসা।" },
+      "advice": { "en": "Smaller meals. Don't lie down for 2–3 hours after eating. Raise the head of the bed by 15 cm with bricks (works better than extra pillows). Lose extra weight if applicable. Avoid: caffeine, mint, citrus, chocolate, late-night meals.", "bn": "ছোট ছোট খাবার। খাওয়ার পর ২-৩ ঘণ্টা শোবেন না। বিছানার মাথার দিকে ইট দিয়ে ১৫ সেমি উঁচু করুন (অতিরিক্ত বালিশের চেয়ে ভাল)। ওজন বেশি হলে কমান। এড়ান: ক্যাফেইন, পুদিনা, লেবু/কমলা, চকোলেট, রাতের দেরিতে খাবার।" },
+      "seeDoctor": { "en": "Doctor if symptoms ≥2x a week despite lifestyle changes, swallowing trouble, food sticking, weight loss, hoarseness, persistent cough. May need endoscopy.", "bn": "জীবনযাপন বদলেও সপ্তাহে ≥২ বার লক্ষণ, গিলতে সমস্যা, খাবার আটকে যাওয়া, ওজন কমা, গলা ভাঙা, ক্রমাগত কাশি — ডাক্তার দেখান। এন্ডোস্কপি লাগতে পারে।" }
+    },
+    {
+      "id": "hemorrhoids",
+      "tags_en": ["piles", "haemorrhoids", "anal bleeding", "fissure"],
+      "tags_bn": ["পাইলস", "অর্শ", "মলদ্বারে রক্ত"],
+      "severity": "mild",
+      "title": { "en": "Piles (haemorrhoids)", "bn": "পাইলস (অর্শ)" },
+      "summary": { "en": "Pain or itching at the anus, bright-red blood on toilet paper or in the bowl after passing stool, sometimes a swelling. Usually from constipation, straining, pregnancy, or long sitting.", "bn": "মলদ্বারে ব্যথা বা চুলকানি, পায়খানার পর কাগজে বা পাত্রে উজ্জ্বল লাল রক্ত, কখনো ফোলা। সাধারণত কোষ্ঠকাঠিন্য, কুঁথ, গর্ভাবস্থা বা বেশিক্ষণ বসায়।" },
+      "advice": { "en": "Increase fibre — vegetables, papaya, ispaghula husk in water. Drink 8 glasses water/day. Don't strain. Don't sit on the toilet >5 min. Warm sitz bath 10 min after motions. OTC pile cream may help — verify with pharmacist.", "bn": "ফাইবার বাড়ান — সবজি, পেঁপে, পানিতে ইসপাগুল হাস্ক। দিনে ৮ গ্লাস পানি। কুঁথ দেবেন না। টয়লেটে ৫ মিনিটের বেশি বসবেন না। পায়খানার পর ১০ মিনিট গরম সিজ বাথ। OTC পাইলস ক্রিম সাহায্য করতে পারে — ফার্মাসিস্টের সাথে যাচাই।" },
+      "seeDoctor": { "en": "Doctor if: heavy bleeding, dark blood mixed with stool (not just on surface), weight loss, change in bowel habit, age >50 with new symptoms, or no improvement in 2 weeks. Could be a more serious problem.", "bn": "ডাক্তার দেখান: প্রচুর রক্তক্ষরণ, মলের সাথে মেশানো কালো রক্ত (শুধু উপরে নয়), ওজন কমা, পায়খানার অভ্যাস বদলানো, ৫০+ বয়সে নতুন লক্ষণ, বা ২ সপ্তাহেও উন্নতি নেই। আরো গুরুতর কিছু হতে পারে।" }
+    },
+    {
+      "id": "panic-attack",
+      "tags_en": ["panic attack", "anxiety attack", "palpitations sudden"],
+      "tags_bn": ["প্যানিক অ্যাটাক", "তীব্র উদ্বেগ", "বুক ধড়ফড়"],
+      "severity": "urgent",
+      "title": { "en": "Panic / anxiety attack", "bn": "প্যানিক অ্যাটাক" },
+      "summary": { "en": "Sudden intense fear with rapid heartbeat, sweating, shaking, shortness of breath, chest tightness, tingling fingers/lips, sense of doom. Peaks in 10 min, settles in 30 min. Hard to tell from heart attack — especially the first time.", "bn": "হঠাৎ তীব্র ভয় — দ্রুত হৃদস্পন্দন, ঘাম, কাঁপুনি, শ্বাসকষ্ট, বুক চাপা, আঙুল/ঠোঁটে ঝিম ঝিম, মৃত্যুভয়। ১০ মিনিটে চূড়ায় উঠে, ৩০ মিনিটে কমে। হার্ট অ্যাটাক থেকে আলাদা করা কঠিন — বিশেষত প্রথমবার।" },
+      "advice": { "en": "Sit down somewhere safe. Slow breathing: in for 4 counts, hold 2, out for 6, repeat for 5 minutes. Name 5 things you can see, 4 you can touch, 3 you can hear — grounds you in the present. Cold water on face helps.", "bn": "নিরাপদ জায়গায় বসুন। ধীর শ্বাস: ৪ গুনে নিন, ২ ধরে রাখুন, ৬ গুনে ছাড়ুন, ৫ মিনিট করুন। ৫টি দেখা যায় এমন, ৪টি স্পর্শ করা যায়, ৩টি শোনা যায় — মনকে বর্তমানে আনে। মুখে ঠান্ডা পানি দিন।" },
+      "seeDoctor": { "en": "Call 999 / go to hospital if first-ever episode, age >40, chest pain spreading to arm/jaw, known heart disease, breathing trouble that doesn't ease, or fainting — to rule out heart attack. Mental health support: Kaan Pete Roi 9612119911.", "bn": "প্রথমবার এই ধরনের সমস্যা, ৪০+ বয়স, হাতে/চোয়ালে ছড়ানো বুকে ব্যথা, পরিচিত হৃদরোগ, না কমা শ্বাসকষ্ট, বা অজ্ঞান — হার্ট অ্যাটাক বাদ দিতে ৯৯৯ / হাসপাতাল। মানসিক স্বাস্থ্য সহায়তা: কান পেতে রই ৯৬১২১১৯৯১১।" }
+    },
+    {
+      "id": "breast-lump",
+      "tags_en": ["breast lump", "breast cancer", "breast pain"],
+      "tags_bn": ["স্তনে গুটি", "স্তন ক্যান্সার", "স্তনে ব্যথা"],
+      "severity": "urgent",
+      "title": { "en": "Breast lump", "bn": "স্তনে গুটি" },
+      "summary": { "en": "Many breast lumps are non-cancerous (cysts, fibroadenoma), but ANY new lump in a woman needs evaluation. Bangladesh has rising breast cancer rates and early treatment cures most early-stage disease.", "bn": "অনেক স্তনের গুটি ক্যান্সার নয় (সিস্ট, ফাইব্রোঅ্যাডিনোমা), কিন্তু নারীর যেকোনো নতুন গুটির পরীক্ষা প্রয়োজন। বাংলাদেশে স্তন ক্যান্সার বাড়ছে এবং প্রথম পর্যায়ে চিকিৎসায় বেশিরভাগই ভালো হয়।" },
+      "advice": { "en": "Note: which breast, how big, hard or soft, painful or not, skin/nipple changes (dimpling, discharge, pulled-in nipple). Check both armpits for lumps. Self-exam monthly, 7 days after period starts.", "bn": "মনে রাখুন: কোন স্তনে, কত বড়, শক্ত নাকি নরম, ব্যথা আছে কিনা, ত্বক/স্তনবৃন্তের পরিবর্তন (গর্ত, স্রাব, ভিতরে যাওয়া স্তনবৃন্ত)। দুই বগলে গুটি দেখুন। মাসিক শুরুর ৭ দিন পর প্রতি মাসে নিজেই পরীক্ষা করুন।" },
+      "seeDoctor": { "en": "See a doctor — do not wait. Government district hospitals offer free breast cancer screening (clinical exam, ultrasound, mammogram >40). Hesitating costs lives.", "bn": "ডাক্তার দেখান — দেরি করবেন না। সরকারি জেলা হাসপাতালে বিনামূল্যে স্ক্রিনিং (পরীক্ষা, আল্ট্রাসাউন্ড, ৪০+ এ ম্যামোগ্রাম)। দেরি করলে জীবন ঝুঁকিতে পড়ে।" }
+    },
+    {
+      "id": "vaginal-discharge",
+      "tags_en": ["vaginal discharge", "white discharge", "itching", "yeast infection"],
+      "tags_bn": ["সাদা স্রাব", "যোনিতে চুলকানি", "যোনি স্রাব"],
+      "severity": "mild",
+      "title": { "en": "Vaginal discharge / itching", "bn": "যোনি স্রাব / চুলকানি" },
+      "summary": { "en": "Some clear or whitish discharge is normal. Heavy, foul-smelling, yellow/green, cottage-cheese-like, frothy, or with itching/burning may indicate an infection (yeast, bacterial, or trichomonas).", "bn": "কিছু পরিষ্কার বা সাদাটে স্রাব স্বাভাবিক। প্রচুর, দুর্গন্ধযুক্ত, হলুদ/সবুজ, পনিরের মতো, ফেনাযুক্ত, বা চুলকানি/জ্বালার সাথে — সংক্রমণ (ইস্ট, ব্যাকটেরিয়াল, ট্রাইকোমোনাস) হতে পারে।" },
+      "advice": { "en": "Wear cotton underwear; change daily. Wipe front to back. Avoid scented soap/spray/douche in the vagina — these cause more infection. No tight wet clothes.", "bn": "সুতি অন্তর্বাস পরুন; প্রতিদিন বদলান। সামনে থেকে পিছনে মুছুন। যোনিতে সুগন্ধি সাবান/স্প্রে/ধোয়া এড়ান — এতে সংক্রমণ বাড়ে। আঁটসাঁট ভেজা কাপড় নয়।" },
+      "seeDoctor": { "en": "See doctor (women's clinic / upazila health complex has female staff): for the right antibiotic/anti-fungal. Urgent if: fever, pelvic pain, pregnancy, after unprotected sex, blood-stained discharge, or sores.", "bn": "ডাক্তার দেখান (নারী ক্লিনিক / উপজেলা স্বাস্থ্য কমপ্লেক্সে নারী কর্মী আছেন): সঠিক অ্যান্টিবায়োটিক/অ্যান্টি-ফাঙ্গাল প্রয়োজন। জরুরি: জ্বর, তলপেটে ব্যথা, গর্ভাবস্থা, অরক্ষিত যৌন সম্পর্কের পর, রক্তযুক্ত স্রাব, বা ক্ষত।" }
+    },
+    {
+      "id": "heat-cramps",
+      "tags_en": ["heat cramps", "muscle cramps heat", "dehydration cramps"],
+      "tags_bn": ["গরমে পেশী টান", "পানিশূন্যতায় খিঁচুনি"],
+      "severity": "mild",
+      "title": { "en": "Heat cramps / dehydration in workers", "bn": "গরমে পেশী টান / মাঠকর্মীর পানিশূন্যতা" },
+      "summary": { "en": "Painful muscle cramps in calves, thighs, or stomach during or after heavy work in heat. Caused by salt and water loss through sweat. Earlier and milder than heat stroke.", "bn": "গরমে ভারী কাজের সময় বা পরে পায়ের ডিম, উরু, পেটে ব্যথাযুক্ত পেশী টান। ঘামে লবণ ও পানি কমে যাওয়ায় হয়। হিট স্ট্রোকের চেয়ে আগে ও কম গুরুতর।" },
+      "advice": { "en": "Stop work, move to shade. Sip ORS or salt-sugar water. Gently stretch the cramped muscle. Rest at least 30 minutes before going back to heat. Don't return to heavy work the same day.", "bn": "কাজ বন্ধ করে ছায়ায় যান। ORS বা লবণ-চিনির পানি অল্প অল্প করে পান করুন। ক্র্যাম্প হওয়া পেশী আস্তে স্ট্রেচ করুন। অন্তত ৩০ মিনিট বিশ্রাম তারপর গরমে যান। সেই দিন আর ভারী কাজ নয়।" },
+      "seeDoctor": { "en": "Hospital if: confusion, headache, vomiting, hot dry skin, very fast pulse, temperature >40°C — moving toward heat stroke.", "bn": "হাসপাতালে: বিভ্রান্তি, মাথাব্যথা, বমি, গরম শুকনো ত্বক, খুব দ্রুত নাড়ি, তাপমাত্রা ৪০°C-এর বেশি — হিট স্ট্রোকের দিকে যাচ্ছে।" }
     }
   ]
 }
