@@ -15,8 +15,16 @@ export function TopBar({ onLoginClick }: TopBarProps) {
       {/* Mobile header (hidden on lg) */}
       <div className="lg:hidden p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src="/icons/CareAid-Aid-logo.png" alt="CareAid AI" className="w-8 h-8 rounded-lg object-cover shrink-0" />
-          <h1 className="text-xl font-bold text-emerald-900">CareAid AI</h1>
+          <div className="relative">
+  <img
+    src="/icons/CareAid-Ai-Logo.png"
+    alt="CareAid AI"
+    className="h-9 w-auto object-contain"
+  />
+  <p className="text-[9px] text-emerald-600 font-medium leading-none mt-0.5">
+    {lang === "bn" ? "স্বাস্থ্য সহায়ক" : "Health Companion"}
+  </p>
+</div>
         </div>
         <div className="flex items-center gap-2">
           <button
