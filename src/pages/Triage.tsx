@@ -263,17 +263,24 @@ export function TriagePage({ onLoginRequired, user }: { onLoginRequired: () => v
       setIsRecording(false);
       return;
     }
-    // Choose engine: offline OR Whisper-loaded prefers Whisper (accuracy & true-offline). Online
-    // + Whisper-not-loaded uses Web Speech (free, no model download).
-    const useWhisper = isVoiceReady() && (!navigator.onLine || isVoiceReady());
-    if (!navigator.onLine && !isVoiceReady()) {
+    // Engine choice — ONLINE always prefers Web Speech (fast, reliable, free — the behaviour that
+    // worked before). Whisper is reserved for OFFLINE use, so downloading the offline AI never
+    // makes online voice slower/flakier. Order:
+    //   • online + browser has Web Speech  → Web Speech
+    //   • offline (or no Web Speech) + Whisper loaded → on-device Whisper
+    //   • offline + Whisper not loaded → prompt to download
+    const online = typeof navigator !== "undefined" ? navigator.onLine : true;
+    const hasWebSpeech = !!((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
+
+    if (online && hasWebSpeech) {
+      await startWebSpeech();
+    } else if (isVoiceReady()) {
+      await startWhisper();
+    } else {
       alert(lang === "bn"
-        ? "অফলাইন ভয়েসের জন্য সেটিংসে গিয়ে অফলাইন AI ডাউনলোড করুন।"
-        : "For offline voice input, download Offline AI in Settings.");
-      return;
+        ? "অফলাইন ভয়েসের জন্য সেটিংসে গিয়ে অফলাইন AI ডাউনলোড করুন (Whisper ভয়েস মডেল)।"
+        : "For offline voice input, download the Offline AI in Settings (includes the Whisper voice model).");
     }
-    if (useWhisper) await startWhisper();
-    else await startWebSpeech();
   };
 
   return (
