@@ -30,14 +30,12 @@ export function Sidebar({ activeTab, setActiveTab, onLoginClick }: SidebarProps)
       {/* Logo */}
       <div className="p-6 flex items-center gap-3 border-b border-emerald-900/60">
         <img
-  src="/icons/CareAid-Aid-logo.png"
+  src="/images/CareAid-Ai-Logo.png"
   alt="CareAid AI"
   className="w-10 h-10 rounded-xl shrink-0 object-cover"
 />
-        <div>
-          <p className="font-bold text-base leading-tight">CareAid AI</p>
-          <p className="text-[10px] text-emerald-300 leading-tight">{lang === "bn" ? "স্বাস্থ্য সহায়ক" : "Health Companion"}</p>
-        </div>
+       <p className="text-[10px] text-emerald-300 leading-tight">{lang === "bn" ? "স্বাস্থ্য সহায়ক" : "Health Companion"}</p>
+        
       </div>
 
       {/* Nav items */}
