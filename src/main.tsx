@@ -7,13 +7,9 @@ import { applyFontScale } from './lib/fontSize.ts';
 
 applyFontScale();
 
-// PWA service worker — register only when the virtual module exists (production build with
-// vite-plugin-pwa active). The module ID is constructed at runtime so Vite's import analyzer
-// doesn't try to resolve it during dev transforms.
-const pwaModuleId = ['virtual', 'pwa-register'].join(':');
-import(/* @vite-ignore */ pwaModuleId)
-  .then(({ registerSW }) => registerSW({ immediate: true }))
-  .catch(() => { /* dev mode — no SW */ });
+// Service worker registration is auto-injected by vite-plugin-pwa (injectRegister: 'auto') at
+// build time — no manual `virtual:pwa-register` import needed (that caused the production
+// ERR_FAILED). In dev (devOptions.enabled: false) there's simply no SW.
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
