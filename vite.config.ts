@@ -19,7 +19,7 @@ export default defineConfig(({mode}) => {
         injectRegister: 'auto',
         // No service worker in dev — keeps `npx vite` free of stale-cache confusion while building.
         devOptions: {enabled: false},
-        includeAssets: ['icons/CareAid-Aid-logo.png', 'model-manifest.json'],
+        includeAssets: ['icons/Favicon.png', 'model-manifest.json'],
         manifest: {
           name: 'CareAid AI — স্বাস্থ্য সহায়ক',
           short_name: 'CareAid AI',
@@ -30,9 +30,9 @@ export default defineConfig(({mode}) => {
           start_url: '/',
           lang: 'bn',
           icons: [
-            {src: '/icons/CareAid-Aid-logo.png', sizes: '192x192', type: 'image/png'},
-            {src: '/icons/CareAid-Aid-logo.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable'},
-          ],
+  {src: '/icons/Favicon.png', sizes: '192x192', type: 'image/png'},
+  {src: '/icons/Favicon.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable'},
+],
         },
         workbox: {
           // App shell + small assets precached. Large WASM (ONNX ~23MB, tesseract-core ~3MB each)
